@@ -2,6 +2,8 @@ package edu.eci.arep.celsiusfahrenheitapirest;
 
 import static spark.Spark.*;
 
+import com.google.gson.Gson;
+
 /**
  * API Rest que permite hacer la conversión tanto de Celsius a Fahrenheit como
  * de Fahrenheit a Celsius
@@ -20,26 +22,36 @@ public class CelsiusFahrenheitAPIRest {
         port(getPort());
         
         staticFiles.location("/");
-        get("/calcFC", (req, res) -> res.redirect(null, getPort()););
-        
-        
-        get("/hello", (req, res) -> "Hello Heroku...");
-        get("/hello/:num", (req, res) -> "Hello Heroku... " + req.params(":num"));
+        get("/calcFC", (req, res) -> {
+        	res.redirect("/index.html");
+        	return null;
+        });
         
         CalculadoraCFServiceImpl calculadoraCF = new CalculadoraCFServiceImpl();
         get("/calcFC/:UnidadTemp/:Grados", (req, res) -> {
             String unidadTemp = req.params(":UnidadTemp");
-            Double grados = Double.parseDouble(req.params(":Grados"));
+            Double grados = null;
+            try {
+            	grados = Double.parseDouble(req.params(":Grados"));	
+			} catch (Exception e) {
+				res.status(400);
+				return "<h1> 400 Bad Request: El número de grados ingresado no es válido </h1>";
+			}
+            
             Double rta;
+            
             if (unidadTemp.equals("C") || unidadTemp.equals("Centigrados")) {
                 rta = calculadoraCF.celsiusAFahrenheit(grados);
+            	//rta = "<h1> " + grados + " °Celsius = " + calculadoraCF.celsiusAFahrenheit(grados) + " °Fahrenheit </h1>";
             } else if (unidadTemp.equals("F") || unidadTemp.equals("Fahrenheit")) {
-                rta = calculadoraCF.fahrenheitACelsius(grados);   
+                rta = calculadoraCF.fahrenheitACelsius(grados);
+            	//rta = "<h1> " + grados + " °Fahrenheit = " + calculadoraCF.fahrenheitACelsius(grados) + " °Celsius </h1>";   
             } else {
-                return "No se ha podido realizar el cálculo, por favor revise los datos ingresados";
+            	res.status(400);
+                return "<h1> 400 Bad Request: No se ha podido realizar el cálculo, por favor revise los datos ingresados </h1>";
             }
-            System.out.println("rta " + rta);
-            return rta;
+            return new Gson().toJson(rta);
+            
         });
     }
 

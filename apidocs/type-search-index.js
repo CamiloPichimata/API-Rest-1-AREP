@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"edu.eci.arep.celsiusfahrenheitapirest","l":"CalculadoraCFService"},{"p":"edu.eci.arep.celsiusfahrenheitapirest","l":"CalculadoraCFServiceImpl"},{"p":"edu.eci.arep.celsiusfahrenheitapirest","l":"CelsiusFahrenheitAPIRest"}]

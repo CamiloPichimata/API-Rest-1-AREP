@@ -3,8 +3,35 @@
     <head>
         <meta charset="utf-8">
         <title>Calculadora F-C</title>
+        <link href="StyleSheet.css" rel="stylesheet">
     </head>
     <body>
-		<h1>Convertidor de grados Celsius a grados Fahrenheit </h1>
+		<h1 class="TitleCenter">Convertidor de grados Celsius a grados Fahrenheit</h1>
+		<div>
+			<h2>API de conversión entre unidades de temperatura (°Celsius - °Fahrenheit)</h2>
+			<p>Esta API tiene como fin hacer la conversión tanto de °Celsius a °Fahrenheit como de °Fahrenheit a °Celsius.</p>
+			<p>A continuación podrá ingresar valores y visualizar el funcionamiento del API</p>
+			
+			<form action="">
+			    <label for="GET-TempC">Temperatura en Celsius (°C): </label>
+			    <input id="GET-TempC" type="text" name="name" id="TempC")>
+			    <input type="submit" value="Calcular" id="CalcularTempCaF">
+			    <label id="rtaTempF"> rta </label>
+			    
+		    |	<div>
+		    		<br></br>
+		    	</div>
+			    
+			    <label for="GET-TempF">Temperatura en Fahrenheit (°F): </label>
+			    <input id="GET-TempF" type="text" name="name">
+			    <input type="submit" value="Calcular" id="CalcularTempFaC">
+			</form>
+			
+		</div>
+		
+		
     </body>
+    <script src="Script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </html>
