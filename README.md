@@ -1,4 +1,4 @@
-# API REST: Convierte temperaturas de °Celsius a °Farenheit y vicebersa
+# API REST: Convierte temperaturas de °Celsius a °Farenheit y viceversa
 
 ## Link de Acceso a la App en Heroku
 
