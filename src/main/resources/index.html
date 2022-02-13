@@ -12,26 +12,32 @@
 			<p>Esta API tiene como fin hacer la conversión tanto de °Celsius a °Fahrenheit como de °Fahrenheit a °Celsius.</p>
 			<p>A continuación podrá ingresar valores y visualizar el funcionamiento del API</p>
 			
-			<form action="">
+			<form>
 			    <label for="GET-TempC">Temperatura en Celsius (°C): </label>
-			    <input id="GET-TempC" type="text" name="name" id="TempC")>
-			    <input type="submit" value="Calcular" id="CalcularTempCaF">
-			    <label id="rtaTempF"></label>
+			    <input id="GET-TempC" type="number" name="tempC" min="-273" max="100">
+			    <input type="button" value="Calcular °F" id="CalcularTempCaF">
+			    <div>
+			    <label id="rtaTempF" class="rta"></label>
+			    </div>
 			    
 		    	<div>
 		    		<br></br>
 		    	</div>
 			    
 			    <label for="GET-TempF">Temperatura en Fahrenheit (°F): </label>
-			    <input id="GET-TempF" type="text" name="name">
-			    <input type="submit" value="Calcular" id="CalcularTempFaC">
+			    <input id="GET-TempF" type="number" name="tempF" min="-460" max="212">
+			    <input type="button" value="Calcular °C" id="CalcularTempFaC">
+			    <div>
+			    <label id="rtaTempC" class="rta"></label>
+			    </div>
+			    
 			</form>
 			
 		</div>
 		
 		
     </body>
-    <script src="Script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="Script.js"></script>
 </html>
