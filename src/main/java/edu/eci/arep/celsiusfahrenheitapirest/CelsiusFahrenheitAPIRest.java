@@ -29,6 +29,7 @@ public class CelsiusFahrenheitAPIRest {
         
         CalculadoraCFServiceImpl calculadoraCF = new CalculadoraCFServiceImpl();
         get("/calcFC/:UnidadTemp/:Grados", (req, res) -> {
+        	res.type("application/json");
             String unidadTemp = req.params(":UnidadTemp");
             Double grados = null;
             try {
@@ -50,6 +51,7 @@ public class CelsiusFahrenheitAPIRest {
             	res.status(400);
                 return "<h1> 400 Bad Request: No se ha podido realizar el cálculo, por favor revise los datos ingresados </h1>";
             }
+            res.status(200);
             return new Gson().toJson(rta);
             
         });

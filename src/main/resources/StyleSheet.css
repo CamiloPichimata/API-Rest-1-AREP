@@ -1,3 +1,58 @@
+body {
+	background-image: url("http://www.solofondos.com/wp-content/uploads/2015/11/Fondos-para-p%C3%A1ginas-web.jpg");
+	background-repeat:no-repeat;
+  	background-position-x:center;
+  	background-position-y:center;
+	background-size: cover;
+}
+
 .TitleCenter {
-	text-align:center;
+	text-align: center;
+}
+
+.Body {
+	text-align: center;
+	position: relative;
+	margin-left: 15%;
+	margin-right: 15%;
+	padding: .7em;
+}
+
+.Text {
+	font-family: 'Akaya Telivigala', cursive;
+	color: rgb(96, 193, 238);
+}
+
+.formula {
+	display: grid;
+	place-items: center;
+}
+
+.Formula {
+	border: 1px solid rgb(150, 150, 150);
+	text-align: center;
+	padding: .7em;
+	width: 400px;
+	border-radius: 6px;
+}
+
+.Form {
+	text-align: center;
+}
+
+.InputText {
+	background-color: black;
+	color: rgb(96, 193, 238);;
+}
+
+.Boton {
+	background-color: black;
+	background: transparent;
+	border: 1px solid white;
+	border-radius: 6px;
+}
+
+.Boton:hover {
+	background-color: rgb(96, 193, 238);
+	color: black;
 }
